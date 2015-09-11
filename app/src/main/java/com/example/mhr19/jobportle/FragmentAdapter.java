@@ -45,7 +45,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         Locale l = Locale.getDefault();
         switch (position) {
             case 0:
-                return "JOBSS";
+                return "JOBSSS";
             case 1:
 
                 return "SAVED JOBS";
