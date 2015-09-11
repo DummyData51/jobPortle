@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">jobPortle</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sign_up">signUpActivity</string>
+    <string name="title_activity_sign_up_activity_2">signUpActivity_2</string>
+    <string name="title_activity_sign_up_3">signUp_3</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="title_activity_all_jobs">AllJobs</string>
+    <string name="title_activity_saved_jobs">SavedJobs</string>
+    <string name="title_activity_local_jobs">LocalJobs</string>
+    <string name="title_activity_tab_adapter">TabAdapter</string>
+    <string name="title_activity_list__view">List_View</string>
+    <string name="title_activity_profile_activity">profile_activity</string>
+    <string name="title_activity_signin">SigninActivity</string>
+
+</resources>
