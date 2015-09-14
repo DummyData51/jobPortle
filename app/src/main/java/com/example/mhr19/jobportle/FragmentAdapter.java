@@ -48,7 +48,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 return "JOBSSS";
             case 1:
 
-                return "SAVED JOBS";
+                return "SAVED JOBSssss";
             case 2:
 
                 return "LOCAL JOBS";
