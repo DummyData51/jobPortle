@@ -16,6 +16,8 @@ public class profile_activity extends AppCompatActivity {
 
     ListView list ;
     ArrayList<UserData> userdata_list = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
