@@ -2,6 +2,7 @@ package com.example.mhr19.jobportle;
 
 import android.app.ListFragment;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ListView;
@@ -60,6 +62,21 @@ public class AllJobs extends Fragment {
 
         DevicesAdapter adapter = new DevicesAdapter(this.getActivity(),R.layout.list_layout,job_list);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    Start_JobDetailsActivity();
+            }
+        });
+
+    }
+
+    public void Start_JobDetailsActivity()
+    {
+        Intent i = new Intent(getActivity(),JobDetails.class);
+        startActivity(i);
 
     }
 

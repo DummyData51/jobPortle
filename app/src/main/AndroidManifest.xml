@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mhr19.jobportle" >
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".OnlineDb.SignUpUser"
         android:allowBackup="true"
@@ -20,7 +23,6 @@
         <activity
             android:name=".signUpActivity"
             android:label="@string/title_activity_sign_up"
-
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -62,9 +64,14 @@
             android:name=".SigninActivity"
             android:label="@string/title_activity_signin" >
         </activity>
+        <activity
+            android:name=".JobDetails"
+            android:label="@string/title_activity_job_details"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mhr19.jobportle.MainMenu" />
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
