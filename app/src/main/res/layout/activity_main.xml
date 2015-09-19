@@ -20,7 +20,7 @@
         android:layout_gravity="center"
         android:src="@drawable/logo"
         android:cropToPadding="false"
-        android:paddingRight="-9dp"
+        android:paddingRight="-10dp"
 
         />
 
