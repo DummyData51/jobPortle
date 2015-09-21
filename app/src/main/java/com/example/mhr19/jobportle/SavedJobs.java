@@ -1,6 +1,7 @@
 package com.example.mhr19.jobportle;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -21,8 +22,11 @@ import java.util.List;
 public class SavedJobs extends Fragment {
     ListView list ;
     ArrayList<Job> job_list = new ArrayList<Job>();
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
 
         View view=inflater.inflate(R.layout.activity_saved_jobs,container,false);
         SetList(view);

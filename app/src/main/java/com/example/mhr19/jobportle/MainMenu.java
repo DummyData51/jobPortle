@@ -85,7 +85,5 @@ public class MainMenu extends AppCompatActivity {
         tab_strp.setTextSize(3, 7);
         tab_strp.setTabIndicatorColor(Color.WHITE);
 
-
-
     }
 }
