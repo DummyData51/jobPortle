@@ -65,31 +65,19 @@ public class JobDetails extends AppCompatActivity {
 
                 if (x1 < x2)
                 {
-                    Toast.makeText(this, "Left to Right Swap Performed", Toast.LENGTH_LONG).show();
 
-
-
-
-
-                    Intent intent = new Intent(this, AllJobs.class);
-                   // intent.putExtra("val" , "delete");
+                    Intent intent = new Intent(this, MainMenu.class);
+                    intent.putExtra("val" , "save");
                     startActivity(intent);
-
-
                     overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
 
                 // if right to left sweep event on screen
                 if (x1 > x2)
                 {
-                    Toast.makeText(this, "Right to Left Swap Performed", Toast.LENGTH_LONG).show();
-
-                    Intent intent = new Intent(this, AllJobs.class);
-
-                    intent.putExtra("val" , "save");
+                    Intent intent = new Intent(this, MainMenu.class);
+                    intent.putExtra("val" , "delete");
                     startActivity(intent);
-
-
                     overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 }
 

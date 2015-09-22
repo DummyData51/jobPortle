@@ -1,5 +1,7 @@
 package com.example.mhr19.jobportle;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -44,6 +46,83 @@ public class MainMenu extends AppCompatActivity {
 
 
         Set_MainMenu();
+
+
+        Intent in = getIntent();
+
+
+        String data = in.getStringExtra("val");
+
+        if(data != null) {
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    this);
+
+
+            if(data.trim().toString().equals("save"))
+            {
+
+                alertDialogBuilder.setTitle("Save Job");
+
+                alertDialogBuilder
+                        .setMessage("Do you want to save this Job ?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // if this button is clicked, close
+                                // current activity
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // if this button is clicked, just close
+                                // the dialog box and do nothing
+                                dialog.cancel();
+                            }
+                        });
+
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+
+            }
+            else if(data.trim().toString().equals("delete"))
+            {
+
+                alertDialogBuilder.setTitle("Delete");
+
+                alertDialogBuilder
+                        .setMessage("Do you want to delete this job ?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // if this button is clicked, close
+                                // current activity
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // if this button is clicked, just close
+                                // the dialog box and do nothing
+                                dialog.cancel();
+                            }
+                        });
+
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+
+            }
+
+        }
     }
 
 
