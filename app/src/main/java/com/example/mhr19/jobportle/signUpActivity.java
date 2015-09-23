@@ -15,7 +15,9 @@ import com.example.mhr19.jobportle.OnlineDb.HttpRequest;
 import com.example.mhr19.jobportle.OnlineDb.SignUpUser;
 import com.example.mhr19.jobportle.OnlineDb.User;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -98,6 +100,8 @@ public class signUpActivity extends Activity {
         Intent i = new Intent(this,MainMenu.class);
         startActivity(i);
     }
+
+
     public String insert(User u)
     {
         String response="";
@@ -130,4 +134,15 @@ public class signUpActivity extends Activity {
 
         return response;
     }
-}
+
+
+
+
+
+
+
+
+    }
+
+
+

@@ -69,7 +69,7 @@ public class JobDetails extends AppCompatActivity {
                     Intent intent = new Intent(this, MainMenu.class);
                     intent.putExtra("val" , "save");
                     startActivity(intent);
-                    overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+                   // overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
 
                 // if right to left sweep event on screen
@@ -78,7 +78,7 @@ public class JobDetails extends AppCompatActivity {
                     Intent intent = new Intent(this, MainMenu.class);
                     intent.putExtra("val" , "delete");
                     startActivity(intent);
-                    overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                    //overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 }
 
                 break;

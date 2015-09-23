@@ -9,8 +9,6 @@ public class SignUpUser extends Application {
 
     User sUser= new User();
 
-
-
     public void setUserData1(String username , String password , String email)
     {
 
@@ -24,8 +22,6 @@ public class SignUpUser extends Application {
         sUser.streetAddress=streetAd;
         sUser.city=city;
         sUser.country=country;
-
-
 
     }
     public void setUserData3(String college, String degree)
