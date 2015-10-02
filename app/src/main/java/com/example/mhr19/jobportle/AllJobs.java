@@ -5,10 +5,12 @@ import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +23,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.mhr19.jobportle.RSSFeed.Item;
+import com.example.mhr19.jobportle.RSSFeed.RssReader;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -29,15 +34,16 @@ import java.util.Set;
 public class AllJobs extends Fragment {
 
     ListView list ;
-    ArrayList<Job> job_list = new ArrayList<Job>();
+    ArrayList<Item> job_list;
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view=inflater.inflate(R.layout.activity_all_jobs, container, false);
+        view=inflater.inflate(R.layout.activity_all_jobs, container, false);
+        getRSSFeed();
 
-
-        SetList(view);
         return  view;
+
 
     }
 
@@ -50,11 +56,11 @@ public class AllJobs extends Fragment {
     {
         list = (ListView)view.findViewById(R.id.alljoblist);
 
-        Job temp = new Job();
+        Item temp = new Item();
         temp.setTitle("Electrical Engg");
         temp.setDescription("Here are the Description....");
         job_list.add(temp);
-        Job temp2 = new Job();
+        Item temp2 = new Item();
         temp2.setTitle("Electrical Engg");
         temp2.setDescription("Here are the Description....");
         job_list.add(temp2);
@@ -72,6 +78,52 @@ public class AllJobs extends Fragment {
 
     }
 
+    void getRSSFeed()
+    {
+        new AsyncTask<String, Void, List<Item>>() {
+
+
+            protected List<Item> doInBackground(String... params) {
+
+                Boolean verified = false;
+                try {
+
+                    return executeRSSFeed();
+
+                } catch (Exception e) {
+
+                    e.printStackTrace();
+
+                }
+                return null;
+            }
+
+            protected void onPostExecute(List<Item> items) {
+                //do something with response
+
+                job_list=new ArrayList<Item>(items);
+                SetList(view);
+                // Set list adapter for the ListView
+
+
+                // Set list view item click listener
+
+
+            }
+        }.execute();
+    }
+    List<Item> executeRSSFeed() {
+        try {
+            // Create RSS reader
+            RssReader rssReader = new RssReader("http://rss.jobsearch.monster.com/rssquery.ashx?brd=1&cy=us&baseurl=jobview.monster.com#");
+            // Get a ListView from main view
+
+            return rssReader.getItems();
+        } catch (Exception e) {
+            Log.e("ITCRssReader", e.getMessage(), e);
+        }
+        return null;
+    }
     public void Start_JobDetailsActivity()
     {
         Intent i = new Intent(getActivity(),JobDetails.class);
@@ -80,11 +132,11 @@ public class AllJobs extends Fragment {
     }
 
 
-    public class DevicesAdapter extends ArrayAdapter<Job> {
+    public class DevicesAdapter extends ArrayAdapter<Item> {
         private int layoutResourceId;
-        private List<Job> job;
+        private List<Item> job;
 
-        public DevicesAdapter(Context context, int layoutId,List<Job> list) {
+        public DevicesAdapter(Context context, int layoutId,List<Item> list) {
             super(context, layoutId, list);
             layoutResourceId = layoutId;
             job = list;
@@ -101,10 +153,10 @@ public class AllJobs extends Fragment {
             }
 
             TextView Ti = (TextView) row.findViewById(R.id.title);
-            Ti.setText(job.get(index).title);
+            Ti.setText(job.get(index).getTitle());
 
             TextView Des = (TextView) row.findViewById(R.id.desp);
-            Des.setText(job.get(index).Description);
+            Des.setText(job.get(index).getDescription());
 
             return row;
         }
