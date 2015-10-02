@@ -56,14 +56,7 @@ public class AllJobs extends Fragment {
     {
         list = (ListView)view.findViewById(R.id.alljoblist);
 
-        Item temp = new Item();
-        temp.setTitle("Electrical Engg");
-        temp.setDescription("Here are the Description....");
-        job_list.add(temp);
-        Item temp2 = new Item();
-        temp2.setTitle("Electrical Engg");
-        temp2.setDescription("Here are the Description....");
-        job_list.add(temp2);
+
 
         DevicesAdapter adapter = new DevicesAdapter(this.getActivity(),R.layout.list_layout,job_list);
         list.setAdapter(adapter);

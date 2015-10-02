@@ -25,6 +25,10 @@ public class RssParseHandler extends DefaultHandler {
 	private boolean parsingTitle;
 	// Parsing link indicator
 	private boolean parsingLink;
+
+    private boolean parsingDate;
+
+    private boolean parsingDescritpion;
 	
 	public RssParseHandler() {
 		rssItems = new ArrayList<Item>();
@@ -40,7 +44,13 @@ public class RssParseHandler extends DefaultHandler {
 			currentItem = new Item();
 		} else if ("title".equals(qName)) {
 			parsingTitle = true;
-		} else if ("link".equals(qName)) {
+		}
+        else if ("description".equals(qName)) {
+            parsingDescritpion = true;
+        }
+        else if ("date".equals(qName)) {
+            parsingDate = true;
+        }else if ("link".equals(qName)) {
 			parsingLink = true;
 		}
 	}
@@ -52,22 +62,39 @@ public class RssParseHandler extends DefaultHandler {
 			currentItem = null;
 		} else if ("title".equals(qName)) {
 			parsingTitle = false;
-		} else if ("link".equals(qName)) {
+		}
+        else if ("description".equals(qName)) {
+            parsingDescritpion = false;
+        }
+        else if ("date".equals(qName)) {
+            parsingDate = false;
+        }else if ("link".equals(qName)) {
 			parsingLink = false;
 		}
 	}
 	
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		if (parsingTitle) {
-			if (currentItem != null)
-				currentItem.setTitle(new String(ch, start, length));
-		} else if (parsingLink) {
-			if (currentItem != null) {
-				currentItem.setLink(new String(ch, start, length));
-				parsingLink = false;
-			}
-		}
-	}
-	
-}
+        if (parsingTitle) {
+            if (currentItem != null)
+                currentItem.setTitle(new String(ch, start, length));
+        } else if (parsingDescritpion) {
+            if (currentItem != null) {
+                currentItem.setDescription(new String(ch, start, length));
+                parsingLink = false;
+            } }
+        else if (parsingDate) {
+                if (currentItem != null) {
+                    currentItem.setDate(new String(ch, start, length));
+                    parsingLink = false;
+                }}
+        else if (parsingLink) {
+                    if (currentItem != null) {
+                        currentItem.setLink(new String(ch, start, length));
+                        parsingLink = false;
+                    }
+                }
+            }
+
+        }
+
