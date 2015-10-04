@@ -1,8 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context="com.example.mhr19.jobportle.JobDetails"
-    android:layout_margin="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     android:orientation="vertical">
 
 
@@ -10,7 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/bg"
-        android:layout_weight="3"/>
+        android:layout_weight="3"
+
+         />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,43 +33,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Location"
-            android:textSize="20dp"
+            android:text="Title"
+            android:textSize="18sp"
+            android:textColor="#d200b1fd"
             android:layout_weight="2"
 
-            android:textColor="#ff000000" />
+           />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Location"
-            android:textSize="20dp"
+            android:textSize="15sp"
             android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/title"
 
             />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_weight="1">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Type"
-            android:textSize="20dp"
-            android:layout_weight="2"
-
-            android:textColor="#ff000000" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Location"
-            android:textSize="20dp"
-            android:layout_weight="1"
-
-            />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,25 +61,27 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Salary"
-            android:textSize="20dp"
+            android:text="Apply for JOB"
+            android:textSize="18sp"
             android:layout_weight="2"
 
-            android:textColor="#ff000000" />
+            android:textColor="#d200b1fd"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Location"
-            android:textSize="20dp"
+            android:text="Click Here to Apply "
+            android:id="@+id/link"
+            android:textSize="18sp"
             android:layout_weight="1"
+            android:onClick="MoveToLink"
 
-            />
+            android:textColor="#ff0f9d0d" />
     </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="10">
+            android:layout_height="wrap_content"
+            android:layout_weight="40">
 
             <TextView
                 android:layout_width="match_parent"
@@ -101,13 +90,14 @@
                 android:textSize="20dp"
                 android:layout_weight="2"
 
-                android:textColor="#ff000000" />
+                android:textColor="#d200b1fd" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="msdkasjdkjamdasdskdjsakjdjaksdjkasjd"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_weight="1"
+                android:id="@+id/detail"
 
                 />
         </LinearLayout>
@@ -128,7 +118,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="See More"
+                android:text=" See More  "
                 android:textSize="15dp"
                 android:layout_weight="1"
 

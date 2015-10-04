@@ -42,6 +42,7 @@ public class MainMenu extends AppCompatActivity {
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(("#d200b1fd"))));
+
         actionBar.setDisplayShowHomeEnabled(true);
 
 

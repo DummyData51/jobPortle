@@ -69,8 +69,8 @@ public class SigninActivity extends Activity {
                  Boolean verified=false;
                 try {
 
-                  // verified= VerifyUser(user[0],user[1]);
-                    verified=true;
+                   verified= VerifyUser(user[0],user[1]);
+                 //   verified=true;
 
                 } catch (Exception e) {
 

@@ -46,13 +46,16 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return "JOBS";
+
             case 1:
-
                 return "SAVED JOBS";
-            case 2:
 
+            case 2:
                 return "LOCAL JOBS";
+
         }
-        return null;
+
+        return "JOBS";
+
     }
 }
