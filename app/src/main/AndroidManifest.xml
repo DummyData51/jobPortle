@@ -42,7 +42,8 @@
         </activity>
         <activity
             android:name=".MainMenu"
-            android:label="@string/title_activity_main_menu" >
+            android:label="JOB PORTAL"
+            android:theme="@style/MyTheme">
         </activity>
         <activity
             android:name=".AllJobs"

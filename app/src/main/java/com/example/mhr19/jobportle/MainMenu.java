@@ -22,6 +22,7 @@ public class MainMenu extends AppCompatActivity {
 
     ViewPager pager;
     PagerTabStrip tab_strp;
+    private android.support.v7.widget.Toolbar toolbar;
 
 
     @Override
@@ -40,11 +41,11 @@ public class MainMenu extends AppCompatActivity {
             // Ignore
         }
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(("#d200b1fd"))));
 
-        actionBar.setDisplayShowHomeEnabled(true);
+        toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
 
+        toolbar.setTitleTextColor(Color.parseColor("#D2F9FDF6"));
 
         Set_MainMenu();
 
