@@ -111,7 +111,7 @@ public class SigninActivity extends Activity {
             HashMap<String, String> params=new HashMap<>();
 
             params.put("username", username);
-            params.put("Password", password);
+            params.put("password", password);
 
             String data =req.preparePost().withData(params).sendAndReadString();
 

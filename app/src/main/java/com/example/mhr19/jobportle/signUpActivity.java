@@ -111,7 +111,7 @@ public class signUpActivity extends Activity {
             HashMap<String, String> params=new HashMap<>();
             params.put("userId","0");
             params.put("username", u.getUsername());
-            params.put("Password", u.getPassword());
+            params.put("password", u.getPassword());
             params.put("email", u.getEmail());
             params.put("degree", u.getDegree());
             params.put("country", u.getCountry());
