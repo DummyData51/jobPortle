@@ -115,7 +115,7 @@ public class SigninActivity extends Activity {
 
             String data =req.preparePost().withData(params).sendAndReadString();
 
-            if(data.contains("null")) {
+            if(!data.contains("id")) {
                 return false;
             }
 
