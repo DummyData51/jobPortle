@@ -115,7 +115,7 @@ public class SigninActivity extends Activity {
 
             String data =req.preparePost().withData(params).sendAndReadString();
 
-            if(!data.contains("id")) {
+            if(!data.contains("userId")) {
                 return false;
             }
 
@@ -129,7 +129,7 @@ public class SigninActivity extends Activity {
                 User u = new User();
                 u.setUsername(json.getString("username"));
                 u.setEmail(json.getString("email"));
-                u.setPassword(json.getString("password"));
+                u.setPassword(json.getString("pass"));
 
                 return true;
             }
